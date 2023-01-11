@@ -1,3 +1,6 @@
-This is test file
-Another line
-Another line
+#include <stdio.h>
+int main()
+{
+    printf("hello, world\n");
+    return 0;
+}

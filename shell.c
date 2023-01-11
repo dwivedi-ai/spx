@@ -5,9 +5,11 @@ Written by: Ankit Dwivedi
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
+#include "tokenizer.c"
 
 // Function Signatures
 int checkParamFile(char *);
+void tokenize(char *, int);
 
 int main(int argc, char * argv[])
 {
@@ -32,7 +34,7 @@ int main(int argc, char * argv[])
         printf("\033[1m");
         printf("spx: ");
         printf("\033[1;31m");
-        printf("error: ", argv[1]);
+        printf("error: %s ", argv[1]);
         printf("\033[0m");
         printf("cannot find the specified file\n");
         printf("error: returned 1 exit status\n");
@@ -45,19 +47,25 @@ int main(int argc, char * argv[])
         printf("\033[1m");
         printf("spx: ");
         printf("\033[1;31m");
-        printf("error: ", argv[1]);
+        printf("error: %s ", argv[1]);
         printf("\033[0m");
         printf("cannot read the specified file\n");
         printf("error: returned 1 exit status\n");
         return 1;
     }
     
-    // Reading File
-    char ch = ' ';
-    while ((ch = getc(fptr)) != EOF)
-    {
-        printf("%c", ch);
+    char * line = NULL;
+    size_t lineLength = 0;
+    ssize_t read;
+
+    while ((read = getline(&line, &lineLength, fptr)) != -1) {
+        // printf("Retrieved line of length %zu:\n", read);
+        tokenize(line, read);
     }
+
+    if (line)
+        free(line);
+
     fclose(fptr);
     return 0;
 }

@@ -16,6 +16,7 @@ SPX is an interpretated programming language that is under development. This is 
 ### Built with
 
 - C
+- Shell
 
 ## Author
 ### Ankit Dwivedi

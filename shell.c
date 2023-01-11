@@ -1,7 +1,3 @@
-/*
-Written by: Ankit Dwivedi
-*/
-
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
@@ -9,6 +5,7 @@ Written by: Ankit Dwivedi
 
 // Function Signatures
 int checkParamFile(char *);
+void prompt(char *);
 void tokenize(char *, int);
 
 int main(int argc, char * argv[])
@@ -17,11 +14,7 @@ int main(int argc, char * argv[])
     // This part of code avoids the segmentation fault due to the calling of an uninitialized pointer.
     if (!argv[1])
     {
-        printf("\033[1m");
-        printf("spx: ");
-        printf("\033[1;31m");
-        printf("fatal error: ", argv[1]);
-        printf("\033[0m");
+        prompt(argv[1]);
         printf("no input files\n");
         printf("interpretation terminated\n");
         return 1;
@@ -84,4 +77,13 @@ int checkParamFile(char * param)
         counter++;
     }
     return strcmp(str, ".spx");
+}
+
+void prompt(char * param)
+{
+    printf("\033[1m");
+        printf("spx: ");
+        printf("\033[1;31m");
+        printf("error: %s ", param);
+        printf("\033[0m");
 }

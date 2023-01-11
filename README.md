@@ -1,6 +1,6 @@
 <h1 align="center">SPX Programming Language</h1>
 <p align="center">
-      Created by Ankit Dwivedi
+      Created by Ankit Dwivedi and Aniruddha Mukherjee
 </p>
 
 ### About SPX Programming Language

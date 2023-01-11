@@ -10,7 +10,7 @@ SPX is an interpretated programming language that is under development. This is 
 
 ### Screenshots
 
-file:///home/mrx/Pictures/Screenshots/Screenshot%20from%202023-01-11%2012-57-42.png![image](https://user-images.githubusercontent.com/65527745/211745005-ca181611-a0e9-4d00-aaac-66872d9e4937.png)
+(https://user-images.githubusercontent.com/65527745/211745005-ca181611-a0e9-4d00-aaac-66872d9e4937.png)
 
 ### Built with
 
